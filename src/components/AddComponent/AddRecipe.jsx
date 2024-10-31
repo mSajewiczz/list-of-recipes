@@ -9,7 +9,7 @@ export default function AddRecipe({onAddRecipe, onDeleteRecipe, onEditRecipe}) {
     const [recipes, setRecipes] = useState('');
     const dispatch = useRecipeDispatch();
 
-
+    let nextId = 3;
 
     return (
         <>
@@ -26,5 +26,5 @@ export default function AddRecipe({onAddRecipe, onDeleteRecipe, onEditRecipe}) {
         </>
     )
 
-    let nextId = 3;
+    
 }

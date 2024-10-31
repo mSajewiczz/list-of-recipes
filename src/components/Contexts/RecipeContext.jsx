@@ -47,7 +47,7 @@ function recipesReducer(recipes, action) {
             });
         }
 
-        case 'delete': {
+        case 'deleted': {
             return recipes.filter(t => t.id !== action.id);
         }
 
@@ -58,7 +58,7 @@ function recipesReducer(recipes, action) {
 }
 
 const initialRecipes = [
-    {id: 0, text: "Test 1", isFavourite: false},
-    {id: 1, text: "Test 2", isFavourite: false},
-    {id: 2, text: "Test 3", isFavourite: false},
+    {id: 0, text: "Test 1", content: "To jest tekst potrawy 1", isFavourite: false},
+    {id: 1, text: "Test 2", content: "To jest tekst potrawy 2", isFavourite: false},
+    {id: 2, text: "Test 3", content: "To jest tekst potrawy 3", isFavourite: false},
 ]
