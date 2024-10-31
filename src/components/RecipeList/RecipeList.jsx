@@ -1,13 +1,22 @@
 import '../RecipeList/RecipeList.css'
 import Search from '../SearchComponent/Search'
-import Manipulators from '../Manipulators/Manipulators'
+import AddRecipe from '../AddComponent/AddRecipe'
+import RecipeList from '../RecipeComponent/Recipe'
+import { RecipeProvider } from '../Contexts/RecipeContext'
 
-export default function RecipeList() {
+export default function App() {
+
+    
     return (
         <>
-            <h1>Lista przepisów kulinarnych</h1>
-            <Search></Search>
-            <Manipulators></Manipulators>
+            <RecipeProvider>
+                <h1>Lista przepisów kulinarnych</h1>
+                <Search></Search>
+                <AddRecipe></AddRecipe>
+                <RecipeList></RecipeList>
+            </RecipeProvider>
+
+        
         </>
     )
 }
