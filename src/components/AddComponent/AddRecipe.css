@@ -1,0 +1,13 @@
+.addRecipeBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.addRecipeBox input {
+    padding: 5px;
+}
+
+#error {
+    color: red;
+}

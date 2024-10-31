@@ -59,7 +59,9 @@ function recipesReducer(recipes, action) {
 }
 
 const initialRecipes = [
-    {id: 0, text: "Test 1", content: "To jest tekst potrawy 1", isFavourite: false},
-    {id: 1, text: "Test 2", content: "To jest tekst potrawy 2", isFavourite: false},
-    {id: 2, text: "Test 3", content: "To jest tekst potrawy 3", isFavourite: false},
+    {id: 0, text: "Płatki z mlekiem", content: "Płatki, mleko, miska, łyka", isFavourite: false},
+    {id: 1, text: "Schabowy z ziemniakami", content: "świnia, nóz, widelec, talerz, ziemniaki", isFavourite: false},
+    {id: 2, text: "Zupa pomidorowa", content: "Pomidory, makaron, miska, lyzka", isFavourite: false},
 ]
+
+

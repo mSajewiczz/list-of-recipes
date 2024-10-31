@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useRecipe, useRecipeDispatch } from '../Contexts/RecipeContext';
+import '../RecipeComponent/Recipe.css'
 
 export default function RecipeList() {
     const recipes = useRecipe();
+ 
 
     return (
         <>
@@ -16,6 +18,8 @@ export default function RecipeList() {
         </>
     )
 }
+
+
 
 function Recipe ({recipe}) {
     const [isEditing, setIsEditing] = useState(false);
@@ -53,20 +57,23 @@ function Recipe ({recipe}) {
             </>
         )
     } else {
-        recipeContent = (
+          recipeContent = (
             <>
-            {recipe.text}
-            {recipe.content}
+            <p>{recipe.text}</p>
+            <p>{recipe.content}</p>
             <button onClick={() => setIsEditing(true)}>Edit</button>
             </>
         )
     }
 
+
     return (
         <>
         <label>
-            <button>Favourite</button>
-            {recipeContent}
+            <button onClick={() => {
+                isFavourite = true;
+            }}>Favourite</button>
+                {recipeContent}
             <button onClick={() => {
                 dispatch({
                     type: 'deleted',

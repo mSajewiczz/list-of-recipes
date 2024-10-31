@@ -9,12 +9,14 @@ export default function App() {
     
     return (
         <>
-            <RecipeProvider>
-                <h1>Lista przepisów kulinarnych</h1>
-                <Search></Search>
-                <AddRecipe></AddRecipe>
-                <RecipeList></RecipeList>
-            </RecipeProvider>
+            <div className='main-box'>
+                <RecipeProvider>
+                    <h1>Cooking book of recipes</h1>
+                    {/* <Search></Search> */}
+                    <AddRecipe></AddRecipe>
+                    <RecipeList></RecipeList>
+                </RecipeProvider>
+            </div>
 
         
         </>
