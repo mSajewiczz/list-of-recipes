@@ -33,6 +33,7 @@ function recipesReducer(recipes, action) {
             return [...recipes,{
                 id: action.id,
                 text: action.text,
+                content: action.content,
                 isFavourite: false
             }]
         }

@@ -30,10 +30,24 @@ function Recipe ({recipe}) {
                     type: 'changed',
                     recipe: {
                         ...recipe,
-                        text: e.target.value
+                        text: e.target.value,
                     }
                 })
-            }} />
+            }}
+            
+            />
+
+            <input type="text" value = {recipe.content} onChange={e => {
+                dispatch({
+                    type: 'changed',
+                    recipe: {
+                        ...recipe,
+                        content: e.target.value,
+                    }
+                })
+            }}
+            
+            />
 
             <button onClick={() => setIsEditing(false)}>Save</button>
             </>
@@ -42,6 +56,7 @@ function Recipe ({recipe}) {
         recipeContent = (
             <>
             {recipe.text}
+            {recipe.content}
             <button onClick={() => setIsEditing(true)}>Edit</button>
             </>
         )
