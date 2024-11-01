@@ -3,7 +3,7 @@ import { useRecipeDispatch  } from "../Contexts/RecipeContext";
 import '../AddComponent/AddRecipe.css'
 
 export default function AddRecipe() {
-    
+
     const [recipes, setRecipes] = useState('');
     const [content, setContent] = useState('');
     const dispatch = useRecipeDispatch();
@@ -17,7 +17,6 @@ export default function AddRecipe() {
             <input type="text" placeholder="Add recipes's decription..." value = {content} onChange = {e => setContent(e.target.value)}/>
             <button onClick={() => {
             if(recipes == "" || content == "") {
-                // console.log("nie ok");
                 document.getElementById("error").innerHTML="Write your recipe and the describe inputs!";
                 
             } else {
@@ -34,7 +33,7 @@ export default function AddRecipe() {
         }
             }>Add</button>
             <button onClick={() => {
-
+                
             }}>Favourite</button>
             <p id="error"></p>
         </div>

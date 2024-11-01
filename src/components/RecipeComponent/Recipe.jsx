@@ -2,9 +2,12 @@ import { useState } from 'react';
 import { useRecipe, useRecipeDispatch } from '../Contexts/RecipeContext';
 import '../RecipeComponent/Recipe.css'
 
+
+
+
 export default function RecipeList() {
     const recipes = useRecipe();
- 
+
 
     return (
         <>
@@ -21,10 +24,22 @@ export default function RecipeList() {
 
 
 
+
 function Recipe ({recipe}) {
     const [isEditing, setIsEditing] = useState(false);
     const dispatch = useRecipeDispatch();
     let recipeContent;
+
+    const recipes = useRecipe();
+    const [showFavourites, setShowFavourites] = useState(false);
+
+    function handleToggleFavourite(id) {
+        dispatch({ type: 'toggleFavourite', id });
+    }
+    
+    const displayedRecipes = showFavourites 
+        ? recipes.filter(recipe => recipe.isFavourite) 
+        : recipes;
 
     if(isEditing) {
         recipeContent = (
@@ -70,9 +85,8 @@ function Recipe ({recipe}) {
     return (
         <>
         <label>
-            <button onClick={() => {
-                isFavourite = true;
-            }}>Favourite</button>
+            <button onClick={() => handleToggleFavourite(recipe.id)}>
+            {recipe.isFavourite ? "Remove from favoutrite" : "Add to favourite"} Favourite</button>
                 {recipeContent}
             <button onClick={() => {
                 dispatch({
