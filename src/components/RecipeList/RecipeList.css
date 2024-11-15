@@ -3,5 +3,12 @@
     justify-content: center;
     flex-direction: column;
     height: 100%;
+    width: 90%;
     list-style-type: none;
+}
+
+.main-box h1 {
+    text-align: center;
+    margin: 10px 0;
+    color: #fff;
 }

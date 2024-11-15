@@ -1,28 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 ul {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     list-style-type: none;
     gap: 20px;
 }
 
-li {
+label {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-top: 10px;
-    width: 100%;
-    background-color: #fff;
-}
-
-li label {
-    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
     padding: 10px;
     width: 100%;
+    background-color: #fff;
 }
 
 label div {

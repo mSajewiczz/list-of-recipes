@@ -1,3 +1,6 @@
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import { useRecipe, useRecipeDispatch } from '../Contexts/RecipeContext';
 import '../RecipeComponent/Recipe.css'
@@ -44,7 +47,7 @@ function Recipe ({recipe}) {
     if(isEditing) {
         recipeContent = (
             <>
-            <input type="text" value = {recipe.text} onChange={e => {
+            <TextField id="outlined-basic" label="Edit" variant="outlined" type="text" value = {recipe.text} onChange={e => {
                 dispatch({
                     type: 'changed',
                     recipe: {
@@ -56,7 +59,7 @@ function Recipe ({recipe}) {
             
             />
 
-            <input type="text" value = {recipe.content} onChange={e => {
+            <TextField id="outlined-basic" label="Edit" variant="outlined" type="text" value = {recipe.content} onChange={e => {
                 dispatch({
                     type: 'changed',
                     recipe: {
@@ -68,7 +71,7 @@ function Recipe ({recipe}) {
             
             />
 
-            <button onClick={() => setIsEditing(false)}>Save</button>
+            <Button variant = "contained" onClick={() => setIsEditing(false)}>Save</Button>
             </>
         )
     } else {
@@ -76,7 +79,7 @@ function Recipe ({recipe}) {
             <>
             <p>{recipe.text}</p>
             <p>{recipe.content}</p>
-            <button onClick={() => setIsEditing(true)}>Edit</button>
+            <Button variant = "contained" onClick={() => setIsEditing(true)}>Edit</Button>
             </>
         )
     }
@@ -85,15 +88,15 @@ function Recipe ({recipe}) {
     return (
         <>
         <label>
-            <button onClick={() => handleToggleFavourite(recipe.id)}>
-            {recipe.isFavourite ? "Remove from favoutrite" : "Add to favourite"} Favourite</button>
+            <Button variant="contained" onClick={() => handleToggleFavourite(recipe.id)}>
+            {recipe.isFavourite ? "Remove from favoutrite" : "Add to favourite"} Favourite</Button>
                 {recipeContent}
-            <button onClick={() => {
+            <Button variant="contained" onClick={() => {
                 dispatch({
                     type: 'deleted',
                     id: recipe.id
                 })
-            }}>Delete</button>
+            }}>Delete</Button>
         </label>
         </>
     )

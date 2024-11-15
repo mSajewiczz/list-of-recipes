@@ -1,13 +1,11 @@
 .addRecipeBox {
     display: flex;
     flex-direction: column;
+    gap: 10px;
     width: 100%;
-}
-
-.addRecipeBox input {
-    padding: 5px;
 }
 
 #error {
     color: red;
 }
+
